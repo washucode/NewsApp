@@ -1,5 +1,40 @@
 {% extends 'base.html'%}
+{% import 'macros.html' as macro%}
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/index.css')}}">
+{% endblock %}
 
 {% block content %}
-<h1>Hey!!</h1>
+<div class="container">
+
+    <h1 class = 'mt-2 mb-2 text-center' style="color:white" >GET YOUR NEWS SOURCES</h1>
+    <!-- Business News Section  -->
+    <h3 class = 'text-center'  style="color:white"> General News Sources</h3>
+    <hr>
+
+    {{ macro.displaySourceResult(sources)}}
+
+    <!-- Business News Section  -->
+     
+    <h3 class ='text-center'  style="color:white"> Technology News Sources</h3>
+    
+
+    {{ macro.displaySourceResult(technology)}}
+
+    <!-- Entertainment News Section  -->
+     
+    <h3 class = 'text-center'  style="color:white"> Entertainment News Sources</h3>
+   
+
+    {{ macro.displaySourceResult(entertainment)}}
+
+    <!-- Entertainment News Section  -->
+     
+    <h3 class = 'text-center'  style="color:white"> Sports News Sources</h3>
+    
+
+    {{ macro.displaySourceResult(sports)}}
+
+</div>
 {% endblock %}
