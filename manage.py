@@ -11,7 +11,7 @@ manager.add_command('server',Server)
 def test():
     """Run the unit tests."""
     import unittest
-    tests = unittest.TestLoader().discover('Test')
+    tests = unittest.TestLoader().discover('Tests')
     unittest.TextTestRunner(verbosity=2).run(tests)
 
 if __name__ == "__main__":
