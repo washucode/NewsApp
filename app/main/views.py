@@ -1,5 +1,7 @@
 from flask import render_template
 from . import main
+from ..request import news
+from ..models import Sources
 
 
 
@@ -7,5 +9,9 @@ from . import main
 
 @main.route('/')
 def index():
-    return render_template("index.html")
+    general = news('general')
+    sports = news('sports')
+    technology= news('technology')
+    entertainment = news('entertainment')
+    return render_template("index.html",general=general,sports=sports,technology=technology,entertainment=entertainment)
 
