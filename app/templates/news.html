@@ -5,14 +5,14 @@
 <div class="container">
 
 	<!-- Popular movie section  -->
-        <h3>Headlines</h3>
-        {% for article_row in articles | batch(4)%}
+        <h3> {{title}} Headlines</h3>
+        {% for article_item in articles | batch(3)%}
 
 	        <div class="row">
 	       
-		        {% for article in article_row %}
+		    {% for article in article_item %}
 
-		        	<div class="col-md-3">
+		        	<div class="col-md-4">
 				        <div class="panel panel-default">
 								
 				            <a href="{{article.url}}" target="_blank">

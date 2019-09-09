@@ -14,8 +14,8 @@ def configure_request(app):
     
 
 
-def news(category):
-    source_url = base_news_url.format(category,api_key)
+def news():
+    source_url = base_news_url.format(api_key)
     my_sources = requests.get(source_url).json()
     my_results = my_sources['sources']
     
