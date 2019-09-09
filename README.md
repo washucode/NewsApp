@@ -38,6 +38,7 @@ ESTHER WACHUKA
   * Visit https://newsapi.org/ and register for an API key.
   * Create start.sh file and in it write the following lines:
         export NEWS_API_KEY='<Your-Api-Key>'
+
         python3.6 manage.py server
 
 
