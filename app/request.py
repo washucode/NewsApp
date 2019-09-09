@@ -1,5 +1,5 @@
 import requests
-from .models import Sources, News_Article
+from .models import Sources, News_Articles
 
 
 base_news_url = None
@@ -42,24 +42,24 @@ def news_article(id):
     source_url = base_articles_url.format(id,api_key)
     my_article = requests.get(source_url).json()
     my_results = my_article['articles']
-    
   
     my_final_article = []
 
-    
+  
     for article in my_results :
-        id = article['id']
-		author = article['author']
-		title = article['title']
-		description = article['description']
-		url = article['url']
-		urlToImage = article['urlToImage']
-		publishedAt = article['publishedAt']
+        
+      
+        author = article['author']
+        title = article['title']
+        description = article['description']
+        url = article['url']
+        urlToImage = article['urlToImage']
+        publishedAt = article['publishedAt']
 
-        articles_object = News_Article(id,author,title,description,url,urlToImage,publishedAt)
-        my_final_article.append(articless_object)
+        articles_object = News_Articles(id,author,title,description,url,urlToImage,publishedAt)
+        my_final_article.append(articles_object)
 
 
-    return my_final_sources
+    return my_final_article
         
 
