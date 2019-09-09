@@ -1,43 +1,54 @@
 {% extends 'base.html'%}
-
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/home.css')}}">
+{% endblock %}
 
 {% block content%}
 <div class="container">
 
-	<!-- Popular movie section  -->
-        <h3> {{title}} Headlines</h3>
-        {% for article_item in articles | batch(3)%}
+	<div class="jumbotron" style=" background-color:#ffffff;">
 
-	        <div class="row">
-	       
-		    {% for article in article_item %}
+			<h2 class = 'text-center' style="color:#01152B; font-weight: 600;" > {{title}} Headlines</h2>
+			<p class ='text-center' style="color:#01152B;"><i>{{slogan}}</i></p> 
+	</div>
+				
 
-		        	<div class="col-md-4">
-				        <div class="panel panel-default">
-								
-				            <a href="{{article.url}}" target="_blank">
-						      <img src="{{article.urlToImage}}" alt="{{article.title}}" class="img-responsive" styles="height:30px">
-						    </a>
-						      <div class="caption">
-						        <h4><a href="{{article.url}}" target="_blank">{{article.title |truncate(35)}}</a></h4>
-						        <p>{{article.description | truncate(80)}}</p>
-						        <a href="{{article.url}}" target="_blank"> Read More</a>	        
-						      </div>
-						      <div class="footer">
-						      Published at: {{article.publishedAt}}
-						    
-							 </div>
-	  					</div>
+	
+	{% for article_item in articles | batch(3)%}
+
+		
+		
+		
+    <div class ="row">
+			{% for article in article_item %}
+		<div class="col-md-4">
+			<div class="panel panel-default">
+					
+				<a href="{{article.url}}" target="_blank">
+					<img src="{{article.urlToImage}}" alt="{{article.title}}" class="img-responsive" styles="height:30px">
+				</a>
+
+				<div class="caption">
+					<h4><a href="{{article.url}}" target="_blank">{{article.title |truncate(35)}}</a></h4>
+					<p>{{article.description | truncate(80)}}</p>
+					<p>Published at: {{article.publishedAt}}</p>
+						        
+				</div>
+				<div class="footer">
+					<a href="{{article.url}}" target="_blank" class ="btn btn-danger btn-sm" > Read More</a>
+				</div>
+			</div>
 
 
-			     	</div>
-			     	
-		        {% endfor %}
-	        
-	        </div>
-         
-        {% endfor %}
-        
+		</div>
+		
+			{% endfor %}
+		
+	</div>
+		
+	{% endfor %}
+	
 	
 </div>
 

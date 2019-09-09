@@ -25,6 +25,7 @@ def articles(id):
 	for source_item in sources:
 		if source == source_item.id:
 			title = source_item.name
+			slogan = source_item.description
 
 
-	return render_template('news.html',articles = articles,source=source,title=title)
+	return render_template('news.html',articles = articles,source=source,title=title,slogan=slogan)
