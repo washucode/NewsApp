@@ -1,25 +1,21 @@
-# Password Locker
-A terminal run application that allows user to store account credentials
+# News Appu
+An application that consumes a news API and displays various news sources which can be viewed individually.
 
 ## Author
 ESTHER WACHUKA
 
 ## Tech Used
  * python3.6
+ * Flask
+ * Bootstrap
+ * html and css
 
 ## BDD
-| Behaivour           | Short Code Input| Output|
+| Behaivour           |           |   Output        |
 |--------------------|------------|-----------------|
-| Start App in terminal | run in terminal: $./runapp.py|Welcome to Password Locker:choose cc or lg or ex|
-| Create Account | Typein: cc |Enter firstname,secondname,username,password|
-| Login |TypeIn: lg| Enter username and password|
-| Successful Login| | Choose cc or dc or de or ex|
-| Create new Credential|Typein :cc | Enter account name, username,password choose gn or ep|
-| Generate Password| Typein : gn | Generates password|
-| Enter password | Typein: ep | Enter password|
-| Display Credential | Typein: dc | display list of saved credentials|
-| Delete Credential | Typein : de | Enter account name then delete by accountname|
-| Exit | Typein : ex | Exit current navigation |
+| Display list of news sources | on page load|Display various sources of news|
+| Display news per source| click on see news source|View news headlines and news previews provided by news source|
+| View entire artical|click on news article| view full article in the source website|
 
 
 
@@ -30,18 +26,19 @@ ESTHER WACHUKA
 * Python3.6
 * pyperclip
 * pip
-
+* virtualenv
+* A text  Editor
 #### 1. Clone
   * In your terminal run:
-    * $git clone https://github.com/washucode/Password_Locker
-    * $cd Password_Locker
-#### 2. Run Password_Locker
-   * In your terminal:
-     * $chmod +x runapp.py
-     * $./runapp.py
-#### 3. Test
-   * In your terminal:
-     * $python3.6 usercredentialstest.py
+    * $git clone https://github.com/washucode/newsapp
+    * $cd newsapp
+#### 2. Run newsapp   
+   
+  * Create a virtual environment and access the folder via your virtual amchine.
+  * Visit https://newsapi.org/ and register for an API key.
+  * Create start.sh file and in it write the following lines:
+        export NEWS_API_KEY='<Your-Api-Key>'
+        python3.6 manage.py server
 
 
 ### License
