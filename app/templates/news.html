@@ -7,10 +7,10 @@
 {% block content%}
 <div class="container">
 
-	<div class="jumbotron" style=" background-color:#ffffff;">
+	<div class="jumbotron" style=" background-color:#300E1A">
 
-			<h2 class = 'text-center' style="color:#01152B; font-weight: 600;" > {{title}} Headlines</h2>
-			<p class ='text-center' style="color:#01152B;"><i>{{slogan}}</i></p> 
+			<h2 class = 'text-center' style="color:#ffffff; font-weight: 600;" > {{title}} Headlines</h2>
+			<p class ='text-center' style="color:#ffffff;"><i>{{slogan}}</i></p> 
 	</div>
 				
 
@@ -29,14 +29,14 @@
 					<img src="{{article.urlToImage}}" alt="{{article.title}}" class="img-responsive" styles="height:30px">
 				</a>
 
-				<div class="caption">
+				<div class="caption ml-2  mr-2">
 					<h4><a href="{{article.url}}" target="_blank">{{article.title |truncate(35)}}</a></h4>
 					<p>{{article.description | truncate(80)}}</p>
 					<p>Published at: {{article.publishedAt}}</p>
 						        
 				</div>
 				<div class="footer">
-					<a href="{{article.url}}" target="_blank" class ="btn btn-danger btn-sm" > Read More</a>
+					<a href="{{article.url}}" target="_blank" class ="btn btn-dark btn-sm"  style="background-color:#0f0f0f; color:#ffffff"> Read More</a>
 				</div>
 			</div>
 
